@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seekr - About</title>
+    <link rel="icon" href="SeekerSS.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(-45deg, #0d1117, #161b22, #1e1e1e, #2c2c2c);
+        color: rgb(4, 4, 4);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Navbar */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+        background: rgba(2, 16, 86, 0.4);
+      }
+      nav .menu {
+        display: flex;
+        gap: 20px;
+      }
+      nav a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+      nav a:hover {
+        color: #ffcc80;
+      }
+
+      #darkToggle {
+        background: transparent;
+        border: none;
+        font-size: 22px;
+        cursor: pointer;
+        color: white;
+      }
+
+      /* Logo */
+      .logo-container {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        margin-top: 120px;
+        transition: all 0.6s ease;
+      }
+      .logo {
+        width: 250px;
+        transition: all 0.6s ease;
+      }
+
+      /* About content */
+      .content {
+        padding: 40px 20px;
+        width: 100%;
+        max-width: 1100px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        overflow-y: auto;
+        -ms-overflow-style: none; 
+        scrollbar-width: none;  
+      }
+
+      .about-box {
+        border-radius: 15px;
+        margin: 0 auto;
+      }
+      .about-box h2{
+        color:  #f0f0f0;
+        text-align: center;
+      }
+      .about-box p{
+        color: #f0f0f0;
+        margin-top: 10px;
+        line-height: 1.6;
+        font-size: 1rem;
+        text-align: justify;
+      }
+
+      /* Scrollbar */
+      .content::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Dark Mode */
+      body.dark {
+        background: url("sky.png") no-repeat top center fixed;
+        background-size: cover;
+        background-attachment: fixed;  
+        background-position: top center; 
+      }
+      body.dark nav {
+        background:rgba(10, 10, 10, 0.9);
+      }
+      body.dark .about-box {
+        color: #eee;
+      }
+      body.dark .about-box h2{
+        color:  #08032c;
+      }
+      body.dark .about-box p {
+        color: #08032c  ;
+      }
+
+      /* Responsive */
+      @media(max-width: 600px) {
+        .content {
+          padding: 20px 15px;
+        }
+
+        nav .menu {
+          gap: 12px;
+        }
+
+        #darkToggle {
+          font-size: 20px;
+        }
+      }
+
+      .footer-note {
+        text-align: center;
+        margin: 20px 0 40px 0;
+        font-size: 14px;
+        color: #fff;
+      }   
+
+      body.dark .footer-note {
+        color: #000; 
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav role="navigation">
+      <div class="menu">
+        <a href="main.html">Home</a>
+        <a href="images.html">Images</a>
+        <a href="about.html">About</a>
+      </div>
+      <button id="darkToggle" aria-label="Toggle Dark Mode">🌙</button>
+    </nav>
+
+    <!-- Logo -->
+    <div class="logo-container" id="logoContainer">
+      <img src="SeekerTrance.png" alt="Logo" class="logo" id="logo">
+    </div>
+
+
+    <!-- Content -->
+    <div class="content">
+      <section id="about" class="about-box">
+        <h2><u>About Seekr</u></h2>
+        <p>
+          <strong>Seekr</strong> is an advanced AI-powered search engine that integrates the 
+          <strong>Google Programmable Search Engine API</strong> with the <strong>Gemini Generative AI API</strong> 
+          to deliver precise, context-aware, and intelligent results. Designed for both web and image exploration, 
+          Seekr merges traditional data retrieval with natural language understanding to redefine how users interact with online information.
+        </p>
+
+        <p>
+          The platform is developed using <strong>HTML5, CSS3, and modern JavaScript (ES6)</strong> for the frontend, 
+          and <strong>Node.js with Express</strong> for the backend API layer. By combining structured search results 
+          with AI-generated insights, Seekr offers a balanced experience of factual data and smart contextual responses.
+        </p>
+
+        <p>
+          Seekr’s clean interface includes <strong>dark/light mode support</strong>, <strong>responsive design</strong>, 
+          and <strong>animated visual elements</strong> to ensure seamless usability across devices. It efficiently 
+          handles both <strong>data and image queries</strong>, fetching results from multiple sources in real time.
+        </p>
+
+        <p>
+          As a project, <strong>Seekr</strong> demonstrates practical implementation of 
+          <strong>API integration, AI model interaction, and frontend–backend synchronization</strong>, 
+          serving as a compact yet powerful example of intelligent web engineering.
+        </p>
+      </section>
+      <div class="footer-note">
+        <h3>- Developed by: Nimil P Gopal | Email: nimilgopal05@gmail.com | © 2025 Seekr Search Engine -</h3>
+      </div>   
+    </div>
+
+    <!-- Dark Mode -->
+    <script>
+      const btn = document.getElementById("darkToggle");
+
+      if(localStorage.getItem("darkMode") === "true"){
+        document.body.classList.add("dark");
+        btn.textContent = "☀️";
+      }
+
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        const dark = document.body.classList.contains("dark");
+        btn.textContent = dark ? "☀️" : "🌙";
+        localStorage.setItem("darkMode", dark);
+      });
+    </script>
+  </body>
+</html>
